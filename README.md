@@ -4,7 +4,7 @@ The F.E.B.I Stack
 ## Introduction
 
 F.E.B.I. stands for 
-- FHIR
+- FHIR Frontend
 - Ethereum
 - IPFS
 - BigchainDB
