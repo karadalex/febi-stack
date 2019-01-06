@@ -21,3 +21,13 @@ FEBI vs LEMP
 | Database          | BigchainDB   | MySQL  |
 | Filesystem        | IPFS         | Linux  |
 | Server            | Browser only | Nginx  |
+
+## Blockachain
+
+### Requirements
+
+### Running the smart contracts
+- Compile contracts: `truffle compile`
+- Migrate contracts: `truffle migrate`
+- Test contracts:    `truffle test`
+
