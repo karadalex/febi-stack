@@ -4,7 +4,7 @@ import './App.css';
 class App extends Component {
   render() {
     var smart = window.FHIR.client({
-      serviceUrl: 'https://fhir-open-api-dstu2.smarthealthit.org',
+      serviceUrl: 'https://r2.smarthealthit.org',
       auth: {
         type: 'none'
       }
