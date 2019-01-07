@@ -31,3 +31,9 @@ FEBI vs LEMP
 - Migrate contracts: `truffle migrate`
 - Test contracts:    `truffle test`
 
+## IPFS
+
+### Requirements
+
+- IPFS Installed https://docs.ipfs.io/introduction/install/
+
