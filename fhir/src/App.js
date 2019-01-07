@@ -3,6 +3,7 @@ import './App.css';
 
 class App extends Component {
   render() {
+    // FHIR is globally loaded in index.js and can be accessed from the window variable
     var smart = window.FHIR.client({
       serviceUrl: 'https://r2.smarthealthit.org',
       auth: {
@@ -12,7 +13,7 @@ class App extends Component {
   
     smart.api.search({type: "Observation", query: {subject: "99912345"}
       }).then(function(r){
-         console.log(JSON.stringify(r,null,2));
+         console.log(r);
       });
 
     return (
