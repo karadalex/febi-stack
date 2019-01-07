@@ -1,33 +1,15 @@
 import React, { Component } from 'react';
-import './App.css';
 import * as driver from 'bigchaindb-driver';
 
-class App extends Component {
+class BDB extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fhirData: {},
       bdbTx: {}
     }
   }
 
   componentDidMount() {
-    // FHIR is globally loaded in index.js and can be accessed from the window variable
-    var smart = window.FHIR.client({
-      serviceUrl: 'https://r2.smarthealthit.org',
-      auth: {
-        type: 'none'
-      }
-    });
-  
-    smart.api.search({type: "Observation", query: {subject: "99912345"}
-      }).then((r) => {
-         console.log(r);
-         this.setState({
-           fhirData: r
-         })
-      });
-
     // BigchainDB server instance (e.g. https://example.com/api/v1/)
     const API_PATH = 'https://test.bigchaindb.com/api/v1/'
 
@@ -69,13 +51,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>FHIR Frontend </h1>
-        <br></br>
-        <h2>FHIR Data</h2>
-        <pre>
-          {JSON.stringify(this.state.fhirData, null, 2)}
-        </pre>
-        <br></br>
         <h2>BigchainDB Transaction</h2>
         <pre>
           {JSON.stringify(this.state.bdbTx, null, 2)}
@@ -85,4 +60,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default BDB;
