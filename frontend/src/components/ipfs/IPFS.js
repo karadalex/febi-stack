@@ -6,7 +6,6 @@ const ipfs = ipfsClient({
     port: '5001',
     protocol: 'https'
 })
-const stringToUse = 'hello world from webpacked IPFS'
 
 class IPFS extends Component {
   constructor (props) {
@@ -28,17 +27,24 @@ class IPFS extends Component {
         protocol_version: res.protocolVersion
       })
     })
-    ipfs.add([Buffer.from(stringToUse)], (err, res) => {
-        if (err) throw err
-        const hash = res[0].hash
-        this.setState({added_file_hash: hash})
-        ipfs.cat(hash, (err, file) => {
-            if (err) throw err
-            let data = file.toString('utf8')
-            this.setState({added_file_contents: data})
-        })
-    })
   }
+
+  componentDidUpdate(prevProps) {
+      if (this.props.fhirData !== prevProps.fhirData) {
+        var fhirDataString = JSON.stringify(this.props.fhirData);
+        ipfs.add([Buffer.from(fhirDataString)], (err, res) => {
+            if (err) throw err
+            const hash = res[0].hash
+            this.setState({added_file_hash: hash})
+            ipfs.cat(hash, (err, file) => {
+                if (err) throw err
+                let data = file.toString('utf8')
+                this.setState({added_file_contents: data})
+            })
+        })
+      }
+  }
+
   render () {
     return (
         <div>

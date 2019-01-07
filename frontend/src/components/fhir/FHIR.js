@@ -24,6 +24,7 @@ class FHIR extends Component {
          this.setState({
            fhirData: r
          })
+         this.props.setFhirData(this.state.fhirData);
       });
   }
 
