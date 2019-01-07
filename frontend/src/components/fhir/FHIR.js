@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
-import BDB from '../bdb/BDB';
-import FHIR from '../fhir/FHIR';
 
-class App extends Component {
+
+class FHIR extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,15 +29,14 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <h1>FHIR Frontend </h1>
-        <br></br>
-        <FHIR></FHIR>
-        <br></br>
-        <BDB></BDB>
+      <div className="fhir">
+        <h2>FHIR Data</h2>
+        <pre>
+          {JSON.stringify(this.state.fhirData, null, 2)}
+        </pre>
       </div>
     );
   }
 }
 
-export default App;
+export default FHIR;
