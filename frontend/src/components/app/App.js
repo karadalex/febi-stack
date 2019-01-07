@@ -26,7 +26,7 @@ class App extends Component {
                 <h1>FHIR Frontend </h1>
                 <FHIR setFhirData={this.setFhirData}></FHIR>
                 <br></br>
-                <BDB></BDB>
+                <BDB fhirData={this.state.fhirData}></BDB>
                 <br></br>
                 <IPFS fhirData={this.state.fhirData}></IPFS>
                 <br></br>
