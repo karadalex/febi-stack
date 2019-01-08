@@ -30,7 +30,7 @@ FEBI vs LEMP
 To build the frontend you must have Yarn or npm installed, then run `yarn start` for a local server or `yarn build` to build the files to later upload in IPFS.
 
 
-## Blockchain
+## Blockchain TODO
 
 ### Requirements
 
