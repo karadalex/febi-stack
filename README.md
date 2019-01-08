@@ -11,6 +11,8 @@ F.E.B.I. stands for
 
 F.E.B.I. is a PoC application stack which uses decentralized technologies for Health Records
 
+<img src="./flowchart.png" />
+
 ## Decetralized stack vs Traditional web stacks
 
 FEBI vs LEMP
@@ -22,18 +24,34 @@ FEBI vs LEMP
 | Filesystem        | IPFS         | Linux  |
 | Server            | Browser only | Nginx  |
 
-## Blockachain
+
+## Frontend
+
+To build the frontend you must have Yarn or npm installed, then run `yarn start` for a local server or `yarn build` to build the files to later upload in IPFS.
+
+
+## Blockchain
 
 ### Requirements
+
+1. Metamask browser plugin
+2. Ganache locally installed
+3. Truffle locally installed
 
 ### Running the smart contracts
 - Compile contracts: `truffle compile`
 - Migrate contracts: `truffle migrate`
 - Test contracts:    `truffle test`
 
+
 ## IPFS
 
 ### Requirements
 
 - IPFS Installed https://docs.ipfs.io/introduction/install/
+
+### Instructions
+
+1. In a terminal run `ipfs daemon`
+2. In a second terminal run `ipfs add -r ipfs/app`
 
